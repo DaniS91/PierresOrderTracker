@@ -5,7 +5,7 @@ namespace OrderTracker.Models
 {
   public class Order
   { 
-    public string Item { get; }
+    public string Item { get; set; }
 
     public Order(string item)
     {
