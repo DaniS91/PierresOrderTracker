@@ -77,8 +77,13 @@ namespace OrderTracker.Tests
       string date1 = "today";
       string price1 = "2.000";
       Order newOrder1 = new Order(title1, description1, date1, price1);
-      int result = newOrder1.Id;
-      Assert.AreEqual(1, result);
+      string title2 = "2nd flour order";
+      string description2 = "2lb of flour";
+      string date2 = "today";
+      string price2 = "3.000";
+      Order newOrder2 = new Order(title2, description2, date2, price2);
+      int result = newOrder2.Id;
+      Assert.AreEqual(2, result);
     }
 
     [TestMethod]
