@@ -44,7 +44,7 @@ namespace OrderTracker.Tests
     }
 
     [TestMethod]
-    public void GetNumber_ReturnsVendorId_Int()
+    public void GetId_ReturnsVendorId_Int()
     {
       string name1 = "Suzie's Flours";
       string description1 = "Suzie McBee's artisan flours";
@@ -73,6 +73,22 @@ namespace OrderTracker.Tests
 
       List<Vendor> result = Vendor.GetAll();
       CollectionAssert.AreEqual(newList, result);
+    }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectVendorWithId_Vendor()
+    {
+      string name1 = "Suzie's Flours";
+      string description1 = "Suzie McBee's artisan flours";
+      string location1 = "Portland, OR";
+      Vendor newVendor1 = new Vendor(name1, description1, location1);
+      string name2 = "Bill's Honey";
+      string description2 = "Bill's Honey Products";
+      string location2 = "Camas, WA";
+      Vendor newVendor2 = new Vendor(name2, description2, location2);
+
+      Vendor result = Vendor.Find(2);
+      Assert.AreEqual(newVendor2, result);
     }
   }
 }
