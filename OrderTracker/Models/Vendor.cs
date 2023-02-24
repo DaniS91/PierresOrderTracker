@@ -15,6 +15,12 @@ namespace OrderTracker.Models
       Name = name;
       Description = description;
       Location = location;
+      _instances.Add(this);
+      Id = _instances.Count;
+    }
+    public static void ClearAll()
+    {
+      _instances.Clear();
     }
   }
 }

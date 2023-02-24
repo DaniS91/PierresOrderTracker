@@ -6,13 +6,12 @@ using System;
 namespace OrderTracker.Tests
 {
   [TestClass]
-  public class VendorTests 
-  // : IDisposable
+  public class VendorTests : IDisposable
   {
-    // public void Dispose()
-    // {
-    //   Vendor.ClearAll();
-    // }
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
@@ -55,12 +54,8 @@ namespace OrderTracker.Tests
       string description2 = "Bill's Honey Products";
       string location2 = "Camas, WA";
       Vendor newVendor2 = new Vendor(name2, description2, location2);
-      string name3 = "Bill's Honey";
-      string description3 = "Bill's Honey Products";
-      string location3 = "Camas, WA";
-      Vendor newVendor3 = new Vendor(name3, description3, location3);
-      int result = newVendor3.Id;
-      Assert.AreEqual(3, result);
+      int result = newVendor2.Id;
+      Assert.AreEqual(2, result);
     }
   }
 }
