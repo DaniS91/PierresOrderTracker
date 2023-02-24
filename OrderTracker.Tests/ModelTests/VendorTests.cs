@@ -21,9 +21,22 @@ namespace OrderTracker.Tests
       string name = "Suzie's Flours";
       string description = "Suzie McBee's artisan flours";
       string location = "Portland, OR";
-      Vendor newVendor = new Vendor("Suzie's Flours", "Suzie McBee's artisan flours", "Portland, OR");
+      Vendor newVendor = new Vendor(name, description, location);
       string result = newVendor.Name;
       Assert.AreEqual(name, result);
+    }
+
+    [TestMethod]
+    public void SetProperty_UpdatesLocation_String()
+    {
+      string name = "Suzie's Flours";
+      string description = "Suzie McBee's artisan flours";
+      string location = "Portland, OR";
+      Vendor newVendor = new Vendor(name, description, location);
+      string newLocation = "Seattle, WA";
+      newVendor.Location = newLocation;
+      string result = newVendor.Location;
+      Assert.AreEqual(newLocation, result);
     }
   }
 }
