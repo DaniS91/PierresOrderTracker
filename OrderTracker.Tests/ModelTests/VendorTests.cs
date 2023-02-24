@@ -38,5 +38,16 @@ namespace OrderTracker.Tests
       string result = newVendor.Location;
       Assert.AreEqual(newLocation, result);
     }
+
+    [TestMethod]
+    public void GetId_ReturnsVendorId_Int()
+    {
+      string name = "Suzie's Flours";
+      string description = "Suzie McBee's artisan flours";
+      string location = "Portland, OR";
+      Vendor newVendor = new Vendor(name, description, location);
+      int result = newVendor.Id;
+      Assert.AreEqual(1, result);
+    }
   }
 }
