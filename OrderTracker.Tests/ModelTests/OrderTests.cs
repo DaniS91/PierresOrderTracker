@@ -69,5 +69,16 @@ namespace OrderTracker.Tests
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
+    [TestMethod]
+    public void GetId_OrderCreatedWithIdAndReturns_Int()
+    {
+      string title1 = "flour order";
+      string description1 = "1lb of flour";
+      string date1 = "today";
+      string price1 = "2.000";
+      Order newOrder1 = new Order(title1, description1, date1, price1);
+      int result = 0;
+      Assert.AreEqual(1, result);
+    }
   }
 }
