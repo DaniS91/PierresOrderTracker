@@ -77,8 +77,25 @@ namespace OrderTracker.Tests
       string date1 = "today";
       string price1 = "2.000";
       Order newOrder1 = new Order(title1, description1, date1, price1);
-      int result = 0;
+      int result = newOrder1.Id;
       Assert.AreEqual(1, result);
+    }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectOrderFromId_Order()
+    {
+      string title1 = "flour order";
+      string description1 = "1lb of flour";
+      string date1 = "today";
+      string price1 = "2.000";
+      Order newOrder1 = new Order(title1, description1, date1, price1);
+      string title2 = "butter order";
+      string description2 = "handful of butter";
+      string date2 = "yesterday";
+      string price2 = "10.00";
+      Order newOrder2 = new Order(title2, description2, date2, price2);
+      Order result = new Order("test", "test", "test", "test");
+      Assert.AreEqual(newOrder1, result);
     }
   }
 }
