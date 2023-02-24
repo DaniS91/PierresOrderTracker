@@ -94,7 +94,7 @@ namespace OrderTracker.Tests
       string date2 = "yesterday";
       string price2 = "10.00";
       Order newOrder2 = new Order(title2, description2, date2, price2);
-      Order result = new Order("test", "test", "test", "test");
+      Order result = Order.Find(1);
       Assert.AreEqual(newOrder1, result);
     }
   }
