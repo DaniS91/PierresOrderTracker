@@ -8,8 +8,8 @@ namespace OrderTracker.Models
     public string Title { get; set; }
     public string Description { get; set; }
     public string Date { get; set; }
-    public double Price { get; set;}
-    public Order(string title, string description, string date, double price)
+    public string Price { get; set; }
+    public Order(string title, string description, string date, string price)
     {
       Title = title;
       Description = description;
