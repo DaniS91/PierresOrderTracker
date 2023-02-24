@@ -6,8 +6,12 @@ using System;
 namespace OrderTracker.Tests
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
     [TestMethod]
     public void OrderContructor_CreatesInstanceOfOrder_Order()
     {
@@ -44,6 +48,24 @@ namespace OrderTracker.Tests
     public void GetAll_ReturnsEmptyList_ListOfOrders()
     {
       List<Order> newList = new List<Order> { };
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
+    [TestMethod]
+    public void GetAll_ReturnsOrderList_OrderList()
+    {
+      string title1 = "flour order";
+      string description1 = "1lb of flour";
+      string date1 = "today";
+      string price1 = "2.000";
+      Order newOrder1 = new Order(title1, description1, date1, price1);
+      string title2 = "butter order";
+      string description2 = "handful of butter";
+      string date2 = "yesterday";
+      string price2 = "10.00";
+      Order newOrder2 = new Order(title2, description2, date2, price2);
+      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
