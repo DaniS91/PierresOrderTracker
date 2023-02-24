@@ -22,7 +22,7 @@ namespace OrderTracker.Tests
       string description = "Suzie McBee's artisan flours";
       string location = "Portland, OR";
       Vendor newVendor = new Vendor("Suzie's Flours", "Suzie McBee's artisan flours", "Portland, OR");
-      string result = "incorrect name";
+      string result = newVendor.Name;
       Assert.AreEqual(name, result);
     }
   }
